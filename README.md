@@ -12,9 +12,48 @@ These files are inteded to be used in the prusa printer enclosures at Calvin Uni
 - 1x [Individually addressable LED Strip](https://www.amazon.com/BTF-LIGHTING-WS2812B-Individual-Addressable-Non-waterproof/dp/B01CDTEJBG/ref=sr_1_1_sspa?crid=EMRRIWRZHQS7&keywords=individually%2Baddressable%2Bled%2Bstrip&qid=1580324344&sprefix=individually%2Baddressable%2Caps%2C158&sr=8-1-spons&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExTTE2OU5WQjQ0ODZXJmVuY3J5cHRlZElkPUEwMTc3MzQzMlpJRFVPTlJSNzRBUSZlbmNyeXB0ZWRBZElkPUEwNzc0Mjk0RUxJNU9YV0EwODJaJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ&th=1)
 
 ## Wiring
-![photo](https://lh3.googleusercontent.com/7quuSsJPBeVBgC5OlmqXzlBPOIepoM1U_Cdz94aR2aN_bY6UXpnY6VzAue0h_nGmKAgXK3mJ7mwu8VzL7PAc7_NHSSEYFQCGSFdOx245ril-t4lLVQTTjnAoHnrhooTQK4L82H31QAIgDxlLQnb2rhKkaKNfY_N0AeoXYtbju3Khs6Nw9Z_i6e-GssrXsZdnDhNsqeTAcxRpJDNCCH4UsBEd0g1h1aE2StDM5TJLsSkM71f7SGx1xTM2l_895moyX6B-T0DnxCjIw9vigmAY3wYjKajKyKmmlvk1kWdJYHM7KUCHgPGzH24_cXkRa7fma7G_qzzl5N6yBFwLS_-1_pZ_8j15sNDRZI65v-Kv82I9JGmuPoe9_Z-egk_dNE1MXOkLpVOXN1v1CkHPLuxyTyYhQMZDOeqbCh41K7dXSRTbgH_oTc7JpAqC7982LAS6l5prtDidefoT45RAOK_iKTMeSJI_aUkj8fpQqAovwR-cu02oj3Jr1Ll-BDK1AXnnrsn-3WCrEk2vsuajlXg6tea2MAMhKRKRAu8wl-0MGrLrUkZmtGf7hxOGkNsxfB5Tfa2Nlh6sqjeLe7mkf9ueRS_407WSVqsD0tHbDLsPbgmbxS_Ulgz2it-XwQEYyEPh00lE3zQtJqDGHO_jt8U9hTXFM42d-Sce_67HlgeaYQC5VZb0_pcv31zdb8NhiZ8SO21QNxdc1awUBAJs3Zk1ZjmHf6JLZ5rhJG1xe2RhfhSXACpb=w686-h871-no)
+![photo](https://lh3.googleusercontent.com/vem8Xpil1XM2C7p8tA4gBcofuDyzzfPfsX5OXxg9VfzfKP1tbHLu8hUG-KteC0AZJ6uWhpcQD0DmmX6Aw1TZv-hNVxh7ZVBDOzPwixHhLcQg2viSHejO4xptIUXBe_FAw781i3yH_QMA6jomYAwFAA_HaoVXMZO6B-VuAA-JJI6zUm_gjI9jph5U5eCUvJ48uEyIOzU6pF8kY4X2xopHPaWvubHASvXQcC7t1_mpIEWcxbnxZuNRhOMC_fbqZfLebb5kXUgUb_05FqJTMYhy0yMPImNJc8IPRCotHr17aQlaQZVoft_ivHJcl6Au-tMD54X-tsnC3U4g0c0ATsdpMvgjNfNDxPMy0YTSqJoi7LOJz-riLmuCNxNw7iZiTsxusFPiPOfWISlRvLHkCcwg8p5muvBQHrNXqJwzQOSqr22gtDOd6V9LeZ8u712bkkkzfqqxwNOJH2en-RSUNeSz3en-2dr7BSvuz4_A0mkxIdpryc1qToxiKK0HbbzRTIj47JFRQzk9AiAxOpBQklhgioQYgDwpqKHbZGDh0sHPUcwthV5wpYsCL1eppj-PDlD8TMEv9BtTtAww4-GLOlWQxZqz9gNU5dj1WNuxnvJgr5WtNXu18sh7WtpKLf_hI5dw00a3-Cu9w6QFWhJhzLZtz5jqe7kV52oX3fiGTa8VEVmYj2IyfCY3J1o=w906-h731-no)
 
-Note the RTC module is not the same as the one used, the labels on the leads are incorrect.
+![Single Module](https://lh3.googleusercontent.com/f9M_e5tYCQ0vInbCXLP84DLRWwk6WJmVoZw4nX364aKirdTtrSSYpBhqQ85vCfKRRTyhZA7PVK03ddK8HlkA1MHGGPrKLjVMfFOgy7F0KK5HOP_ZQk2nyVU01CV53AeUc69GKBvplC4dDNA15BVLAclBdp-AjkdPnM7eXXeSr3GHaP5uLpKxbhKukn-B64q0zoceNA7kWilyXFOl8SaNo0iWrBjxEqSvxKd2P4E7-UPGuh85sOLUFJUYPnvW3HlKLFV1ohZs9evpg8VLU8NRE0Xnn7fxEAGBZHsvVhmwQU_X0mMB1d0Bs1Cpr1l7yHfQyc1rgbjoAN2CB14h6EZ54_-gVLEcZqHhI4K-ZMYU6peN3cRVUUwkWJ_-iQT_L9gkN3BM0RMBy5OON2-brdt4NeZfRTn6_5CGYrcwSMAPogg8n5805s_Wd-73KqCU-TfMpiyWbVTSdzuDSgX9-RdICye_aQVw1jduP2VCNZbDiB9VsQOJaCScEM64F8N3rsBfC9z1mN3eDF9zfXhLTsECTSghbi1fRbHxSMIgAhCEatqAGGL9x2Ov2hZYOv2hdbwwpUeshSRK-VHLY5WxRw12wQRRYDUrG1lxoXiRYHCJkkA8bNQEjN92ohvMOBLvqdzcfowZw6TU84Irp2iH2BqQtE9-7zDWNpZIuXYvxuXisQyQmkvX0iKNxkpmh0v3hqRhbZlaB-9ozdUC04mgqEAaEO8wFqFN-uBL9DDz5dQIR21FXCVC=w632-h871-no)
+
+The same (12v) power supply is used for all of the fans and another (5v) is used for all of the LEDs.
+
+*Note the RTC module is not the same as the one used, the labels on the leads are incorrect.*
+
+### Pin reference for Pi
+
+Fan switch
+| Pin | Name    | Connect To   |
+|-----|---------|--------------|
+| 4   | 5v      | Switch pin 1 |
+| 13  | GPIO 27 | Switch pin 2 |
+
+RTC-Nano
+| Pin | Name   | Connect To  |
+|-----|--------|-------------|
+| 1   | 3.3V   | 3.3V        |
+| 3   | SDA    | SDA         |
+| 5   | SCL    | SCL         |
+| 7   | GPIO 4 | ds18b20 Out |
+| 9   | GND    | GND         |
+
+MOS Module
+| Pin | Name    | Connect To |
+|-----|---------|------------|
+| 14  | GND     | GND        |
+| 18  | GPIO 24 | SIG        |
+
+LED Strip
+| Pin | Name    | Connect To |
+|-----|---------|------------|
+| 20  | GND     | GND        |
+| 22  | GPIO 25 | Din        |
+
+LED Switch
+| Pin | Name    | Connect To  |
+|-----|---------|-------------|
+| 6   | GND     | Yellow wire |
+| 11  | GPIO 17 | Green wire  |
 
 ## Setup
 Setup the raspberry pi so that all of the code will work.
@@ -22,17 +61,18 @@ Setup the raspberry pi so that all of the code will work.
 To use RTC-nano module on Raspberry Pi, you need to complete some configuration. Here two ways are provided: auto-configuration by script and manual configuration.
 **Auto-configuration:**
 
-1) Log into the Raspberry Pi, open a terminal.
-2) Download the package by github:
+1. Log into the Raspberry Pi, open a terminal.
+2. Download the package by github:
 ```
 git clone https://github.com/sunfounder/SunFounder_RTC_Nano.git
 ```
-3) Get into the code directory to install:
+3. Get into the code directory to install:
 ```
 cd SunFounder_RTC_Nano 
 sudo ./install
 ```
 ![Terminal image](http://wiki.sunfounder.cc/images/6/68/Rtc-nano.png)
+
 **Prompts in installation:**
 
 You'll be prompted about whether to sync the time on the Raspberry Pi to the RTC or not; if you type in no, you can set it manually.
@@ -43,7 +83,7 @@ When the setting is done, you will see a reboot prompt, type in yes.
 
 After the library installation is done, we can import this in Python programming. For the library’s API and documentation, please refer to the Appendix.
 
-*Taken from the SunFounder wiki on the RTC-Nano device. ([Link](http://wiki.sunfounder.cc/index.php?title=RTC-Nano#Configuration}}*
+*Taken from the SunFounder wiki on the RTC-Nano device. ([Link](http://wiki.sunfounder.cc/index.php?title=RTC-Nano#Configuration))*
 
 ### GPIO Setup
 
@@ -52,6 +92,9 @@ If the RPi.GPIO library is not installed on the Pi (comes preinstalled in some p
 sudo apt-get update
 sudo apt-get -y install python-rpi.gpio
 ```
+
+### LED Strip Setup
+
 Before we install the Raspberry Pi library for the WS2812 LEDs, some preparations have to be made:
 
 1. The package sources are updated:
