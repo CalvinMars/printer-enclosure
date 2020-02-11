@@ -14,4 +14,162 @@ These files are inteded to be used in the prusa printer enclosures at Calvin Uni
 ## Wiring
 ![photo](https://lh3.googleusercontent.com/7quuSsJPBeVBgC5OlmqXzlBPOIepoM1U_Cdz94aR2aN_bY6UXpnY6VzAue0h_nGmKAgXK3mJ7mwu8VzL7PAc7_NHSSEYFQCGSFdOx245ril-t4lLVQTTjnAoHnrhooTQK4L82H31QAIgDxlLQnb2rhKkaKNfY_N0AeoXYtbju3Khs6Nw9Z_i6e-GssrXsZdnDhNsqeTAcxRpJDNCCH4UsBEd0g1h1aE2StDM5TJLsSkM71f7SGx1xTM2l_895moyX6B-T0DnxCjIw9vigmAY3wYjKajKyKmmlvk1kWdJYHM7KUCHgPGzH24_cXkRa7fma7G_qzzl5N6yBFwLS_-1_pZ_8j15sNDRZI65v-Kv82I9JGmuPoe9_Z-egk_dNE1MXOkLpVOXN1v1CkHPLuxyTyYhQMZDOeqbCh41K7dXSRTbgH_oTc7JpAqC7982LAS6l5prtDidefoT45RAOK_iKTMeSJI_aUkj8fpQqAovwR-cu02oj3Jr1Ll-BDK1AXnnrsn-3WCrEk2vsuajlXg6tea2MAMhKRKRAu8wl-0MGrLrUkZmtGf7hxOGkNsxfB5Tfa2Nlh6sqjeLe7mkf9ueRS_407WSVqsD0tHbDLsPbgmbxS_Ulgz2it-XwQEYyEPh00lE3zQtJqDGHO_jt8U9hTXFM42d-Sce_67HlgeaYQC5VZb0_pcv31zdb8NhiZ8SO21QNxdc1awUBAJs3Zk1ZjmHf6JLZ5rhJG1xe2RhfhSXACpb=w686-h871-no)
 
+Note the RTC module is not the same as the one used, the labels on the leads are incorrect.
+
 ## Setup
+Setup the raspberry pi so that all of the code will work.
+### Temperature probe
+To use RTC-nano module on Raspberry Pi, you need to complete some configuration. Here two ways are provided: auto-configuration by script and manual configuration.
+**Auto-configuration:**
+
+1) Log into the Raspberry Pi, open a terminal.
+2) Download the package by github:
+```
+git clone https://github.com/sunfounder/SunFounder_RTC_Nano.git
+```
+3) Get into the code directory to install:
+```
+cd SunFounder_RTC_Nano 
+sudo ./install
+```
+![Terminal image](http://wiki.sunfounder.cc/images/6/68/Rtc-nano.png)
+**Prompts in installation:**
+
+You'll be prompted about whether to sync the time on the Raspberry Pi to the RTC or not; if you type in no, you can set it manually.
+In manual setting, type in the date and then time, and the setting value will be saved as the time on the RTC module.
+When the setting is done, you will see a reboot prompt, type in yes.
+
+*For manual installation, please see the RTC-nano wiki page linked below*
+
+After the library installation is done, we can import this in Python programming. For the library’s API and documentation, please refer to the Appendix.
+
+*Taken from the SunFounder wiki on the RTC-Nano device. ([Link](http://wiki.sunfounder.cc/index.php?title=RTC-Nano#Configuration}}*
+
+### GPIO Setup
+
+If the RPi.GPIO library is not installed on the Pi (comes preinstalled in some pis), use these commands to install the RPi.GPIO library:
+```
+sudo apt-get update
+sudo apt-get -y install python-rpi.gpio
+```
+Before we install the Raspberry Pi library for the WS2812 LEDs, some preparations have to be made:
+
+1. The package sources are updated:
+```
+sudo apt-get update
+```
+2. We install the required packages (confirm with Y):
+```
+sudo apt-get install gcc make build-essential python-dev git scons swig
+```
+3. The audio output must be deactivated. For this we edit the file
+```
+sudo nano /etc/modprobe.d/snd-blacklist.conf
+```
+Here we add the following line:
+```
+blacklist snd_bcm2835
+```
+Then the file is saved by pressing CTRL + O and CTRL + X closes the editor.
+
+4. We also need to edit the configuration file:
+```
+sudo nano /boot/config.txt
+```
+Below are lines with the following content (with Ctrl + W you can search):
+```
+# Enable audio (loads snd_bcm2835)
+dtparam=audio=on
+```
+This bottom line is commented out with a hashtag # at the beginning of the line: `#dtparam=audio=on`
+
+5. We restart the system
+```
+sudo reboot
+```
+
+Now we can download the library.
+```
+git clone https://github.com/jgarff/rpi_ws281x
+```
+In this directory are on the one hand some C files included, which can be easily compiled. The example code for this is easy to understand. In order to use them in Python, we need to compile them:
+```
+cd rpi_ws281x/
+sudo scons
+```
+However, in this tutorial we are mainly interested in the Python variant and therefore switch to the Python folder:
+```
+cd python
+```
+Here we carry out the installation:
+```
+sudo python setup.py build
+sudo python setup.py install
+```
+This will allow us to carry out a first test in the next step.
+
+*This is taken from the website [tutorials-raspberrypi.com](https://tutorials-raspberrypi.com/connect-control-raspberry-pi-ws2812-rgb-led-strips/) article on the NeoPixel LED strip.*
+
+### Setup Auto Script running
+**Auto Login Setup**
+
+The first step is to enable the Pi to login automatically without requiring any user intervention. This step is optional.
+
+At the command prompt or in a terminal window type :
+```
+sudo raspi-config
+followed by Enter.
+```
+Select “Boot Options” then “Desktop/CLI” then “Console Autologin”
+
+**Prepare Script**
+
+My test script is called “myscript.py” and is located in /home/pi/. This is what it contains :
+```
+#!/usr/bin/python
+print("******************************************************")
+print("* This is a test script. There are many like it,     *")
+print("* but this one is mine. My script is my best friend. *")
+print("* It is my life. I must master it as I must master   *")
+print("* my life.                                           *")
+print("******************************************************")
+```
+You can download this directly to your Pi by using the following command :
+```
+wget https://bitbucket.org/MattHawkinsUK/rpispy-misc/raw/master/python/myscript.py
+```
+I strongly suggest getting this working before trying any other scripts!
+
+**Auto-run Script Setup**
+
+Now we need to tell the operating system to run the script for the Pi user. In the command prompt or in a terminal window type :
+```
+sudo nano /etc/profile
+```
+Scroll to the bottom and add the following line :
+```
+sudo python /home/pi/myscript.py
+```
+where “/home/pi/myscript.py” is the path to your script.
+
+Type “Ctrl+X” to exit, then “Y” to save followed by “Enter” twice.
+
+**A Script Without End**
+
+You will only be returned to the command line when your script is complete. If your script contains an endless loop then you may want to use this line in the profile file instead :
+```
+sudo python /home/pi/myscript.py &
+```
+This will allow the script to run in the background but you will not see any text output from it.
+
+**Reboot and Test**
+
+To test if this has worked reboot your Pi using :
+```
+sudo reboot
+```
+When it starts up your script will run and you will see something like this :
+```
+Autorun script result
+```
+Due to the technique we’ve used the script is run whenever the Pi user logs in. This means if you create other terminal sessions (via SSH for example) the script will run each time.
