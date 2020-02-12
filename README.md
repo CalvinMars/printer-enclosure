@@ -1,6 +1,14 @@
 # Printer Enclosure Program
 
 These files are inteded to be used in the prusa printer enclosures at Calvin University on Raspberry Pi Zero W computers. The parts list is what was used for the 3 printer enclosures done in February of 2020.
+
+### Pi ip adresses and usernames
+
+- prusapi1: 153.106.1.50
+- prusapi2: 153.106.1.51
+- prusapi3: 153.106.1.52
+
+
 ## Parts
 
 - 3x Raspberry Pi Zero W (with individual power supplies)
