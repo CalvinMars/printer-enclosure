@@ -33,7 +33,7 @@ The same (12v) power supply is used for all of the fans and another (5v) is used
 Fan switch
 | Pin | Name    | Connect To   |
 |-----|---------|--------------|
-| 4   | 5v      | Switch pin 1 |
+| 6   | GND     | Switch pin 1 |
 | 13  | GPIO 27 | Switch pin 2 |
 
 RTC-Nano
