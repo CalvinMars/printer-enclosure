@@ -1,6 +1,6 @@
 import time
 import RPi.GPIO as GPIO
-from rpi_ws281x import *
+from neopixel import *
 import argparse
 
 # LED strip configuration:
