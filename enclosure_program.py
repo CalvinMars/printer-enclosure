@@ -8,10 +8,10 @@ DS18B20="/sys/bus/w1/devices/28-000009a29c16/w1_slave"
 GPIO.setwarnings(False) # Turn off warnings
 GPIO.setmode(GPIO.BCM)
 
-FAN_PIN = 23
+FAN_PIN = 24
 BUTTON_PIN = 27
 GPIO.setup(FAN_PIN, GPIO.OUT) # Set fan pin
-GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set button pin, with initial value off
+GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Set button pin, with initial value off
 
 fan_state=False
 button=False
