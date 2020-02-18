@@ -52,7 +52,7 @@ if __name__ == '__main__':
     # colorWipe(strip, Color(255,255,255))
     for x in range(0, 68):
         pixels[x] = (255, 255, 255)
-        time.sleep(.2)
+        time.sleep(.02)
     while True:
         # Get reading from probe
         f = open(DS18B20, "r")
