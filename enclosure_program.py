@@ -51,7 +51,7 @@ if __name__ == '__main__':
     # strip.begin()
     # colorWipe(strip, Color(255,255,255))
     for x in range(0, 68):
-        pixels[x] = (255, 255, 255)
+        pixels[x] = (239, 235, 216)
         time.sleep(.02)
     while True:
         # Get reading from probe
