@@ -18,7 +18,7 @@ import neopixel
 pixels = neopixel.NeoPixel(board.D18, 68)
 
 # Find temperature probe
-DS18B20="/sys/bus/w1/devices/28-000009a29c16/w1_slave"
+# DS18B20="/sys/bus/w1/devices/28-000009a29c16/w1_slave"
 
 # Setup fan and button GPIO pins (23 and 10)
 GPIO.setwarnings(False) # Turn off warnings
@@ -55,16 +55,17 @@ if __name__ == '__main__':
         time.sleep(.02)
     while True:
         # Get reading from probe
-        f = open(DS18B20, "r")
-        data = f.read()
-        f.close()
+        # f = open(DS18B20, "r")
+        # data = f.read()
+        # f.close()
 
         # Only use the temperature data
-        (discard, sep, reading) = data.partition(' t=')
+        # (discard, sep, reading) = data.partition(' t=')
 
         # Devide to find Celcius
-        temp = float(reading) / 1000.0
-        print(temp)
+        # temp = float(reading) / 1000.0
+        temp = 0
+        # print(temp)
         
         print(GPIO.input(BUTTON_PIN))
         # If button is pressed, turn fan on
