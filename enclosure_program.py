@@ -1,20 +1,8 @@
 import time
 import RPi.GPIO as GPIO
-# from neopixel import *
-# import argparse
-
-# # LED strip configuration:
-# LED_COUNT      = 68      # Number of LED pixels.
-# LED_PIN        = 18      # GPIO pin connected to the pixels (18 uses PWM!).
-# #LED_PIN        = 10      # GPIO pin connected to the pixels (10 uses SPI /dev/spidev0.0).
-# LED_FREQ_HZ    = 800000  # LED signal frequency in hertz (usually 800khz)
-# LED_DMA        = 10      # DMA channel to use for generating signal (try 10)
-# LED_BRIGHTNESS = 255     # Set to 0 for darkest and 255 for brightest
-# LED_INVERT     = False   # True to invert the signal (when using NPN transistor level shift)
-# LED_CHANNEL    = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
-
 import board
 import neopixel
+
 pixels = neopixel.NeoPixel(board.D18, 68)
 
 # Find temperature probe
@@ -42,6 +30,7 @@ if __name__ == '__main__':
     for x in range(0, 68):
         pixels[x] = (255, 197, 143)
         time.sleep(.02)
+        i = 0
     while True:
         # Get reading from probe
         f = open(DS18B20, "r")
@@ -53,8 +42,9 @@ if __name__ == '__main__':
 
         # Devide to find Celcius
         temp = float(reading) / 1000.0
+        if i%100 == 1:
+            print(temp)
         # print(temp)
-        print(GPIO.input(LED_PIN))
         if GPIO.input(LED_PIN) == GPIO.LOW:
             if led_button == False:
                 led_button=True
@@ -95,5 +85,5 @@ if __name__ == '__main__':
                     fan_state = False
                     GPIO.output(FAN_PIN, False)
         
-        
-        time.sleep(1)
+        i+=i
+        time.sleep(.1)
