@@ -29,7 +29,7 @@ BUTTON_PIN = 27
 LED_PIN = 17
 GPIO.setup(FAN_PIN, GPIO.OUT) # Set fan pin
 GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Set button pin, with initial value off
-GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(LED_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 fan_state=False
 button=False
@@ -38,7 +38,7 @@ button_state = 0
 led_button = False
 
 if __name__ == '__main__':
-
+    print("Starting Printer Enclosure program")
     for x in range(0, 68):
         pixels[x] = (255, 197, 143)
         time.sleep(.02)
@@ -61,7 +61,6 @@ if __name__ == '__main__':
                 for x in range(0, 68):
                     pixels[x] = (0, 0, 0)
                     time.sleep(.02)
-
         else:
             if led_button == True:
                 print("Turning LEDs off")
