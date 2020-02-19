@@ -29,7 +29,7 @@ BUTTON_PIN = 27
 LED_PIN = 26
 GPIO.setup(FAN_PIN, GPIO.OUT) # Set fan pin
 GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Set button pin, with initial value off
-GPIO.setup(LED_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(LED_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 fan_state=False
 button=False
