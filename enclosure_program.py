@@ -56,13 +56,16 @@ if __name__ == '__main__':
         # print(temp)
         
         if GPIO.input(BUTTON_PIN) == GPIO.LOW:
-            if led_button == False:
+            if led_button == True:
+                led_button=False
                 print("turning LEDs on")
                 for x in range(0, 68):
                     pixels[x] = (0, 0, 0)
                     time.sleep(.02)
+                    
         else:
-            if led_button == True:
+            if led_button == False:
+                led_button=True
                 print("Turning LEDs off")
                 for x in range(0, 68):
                     pixels[x] = (255, 197, 143)
