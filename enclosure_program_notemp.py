@@ -67,7 +67,7 @@ if __name__ == '__main__':
         temp = 0
         # print(temp)
         
-        print(GPIO.input(BUTTON_PIN))
+        # print(GPIO.input(BUTTON_PIN))
         # If button is pressed, turn fan on
         if GPIO.input(BUTTON_PIN) == GPIO.HIGH:
             if (button == False):

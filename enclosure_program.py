@@ -26,30 +26,19 @@ GPIO.setmode(GPIO.BCM)
 
 FAN_PIN = 24
 BUTTON_PIN = 27
+LED_PIN = 17
 GPIO.setup(FAN_PIN, GPIO.OUT) # Set fan pin
 GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Set button pin, with initial value off
+GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 fan_state=False
 button=False
 
 button_state = 0
-
-
-# Define functions which animate LEDs in various ways.
-# def colorWipe(strip, color, wait_ms=50):
-#     """Wipe color across display a pixel at a time."""
-#     for i in range(strip.numPixels()):
-#         strip.setPixelColor(i, color)
-#         strip.show()
-#         time.sleep(wait_ms/1000.0)
-
+led_button = False
 
 if __name__ == '__main__':
-    # Create NeoPixel object with appropriate configuration.
-    # strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
-    # Intialize the library (must be called once before other functions).
-    # strip.begin()
-    # colorWipe(strip, Color(255,255,255))
+
     for x in range(0, 68):
         pixels[x] = (255, 197, 143)
         time.sleep(.02)
@@ -64,11 +53,26 @@ if __name__ == '__main__':
 
         # Devide to find Celcius
         temp = float(reading) / 1000.0
-        print(temp)
+        # print(temp)
         
-        print(GPIO.input(BUTTON_PIN))
+        if GPIO.input(BUTTON_PIN) == GPIO.LOW:
+            if led_button == False:
+                print("turning LEDs on")
+                for x in range(0, 68):
+                    pixels[x] = (0, 0, 0)
+                    time.sleep(.02)
+
+        else:
+            if led_button == True:
+                print("Turning LEDs off")
+                for x in range(0, 68):
+                    pixels[x] = (255, 197, 143)
+                    time.sleep(.02)
+
+
+        # print(GPIO.input(BUTTON_PIN))
         # If button is pressed, turn fan on
-        if GPIO.input(BUTTON_PIN) == GPIO.HIGH:
+        if GPIO.input(BUTTON_PIN) == GPIO.LOW:
             if (button == False):
                 print("Button Pressed")
                 GPIO.output(FAN_PIN, True)
