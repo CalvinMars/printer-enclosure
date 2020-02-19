@@ -54,8 +54,8 @@ if __name__ == '__main__':
         # Devide to find Celcius
         # temp = float(reading) / 1000.0
         # print(temp)
-        print(GPIO.input(BUTTON_PIN))
-        if GPIO.input(BUTTON_PIN) == GPIO.LOW:
+        print(GPIO.input(LED_PIN))
+        if GPIO.input(LED_PIN) == GPIO.LOW:
             if led_button == False:
                 led_button=True
                 print("turning LEDs on")
