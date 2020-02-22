@@ -55,7 +55,7 @@ LED Strip
 | Pin | Name    | Connect To |
 |-----|---------|------------|
 | 20  | GND     | GND        |
-| 22  | GPIO 25 | Din        |
+| 18  | GPIO 25 | Din        |
 
 LED Switch
 | Pin | Name    | Connect To  |

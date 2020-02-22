@@ -23,9 +23,16 @@ led_button = False
 
 if __name__ == '__main__':
     print("Starting Printer Enclosure program")
-    for x in range(0, 68):
-        pixels[x] = (255, 197, 143)
-        time.sleep(.02)
+    # for x in range(0, 68):
+    #     pixels[x] = (255, 197, 143)
+    #     time.sleep(.02)
+    for x in range (4):
+        pixels[34] = (255, 197, 143)
+        pixels[35] = (255, 197, 143)
+        time.sleep(.2)
+        pixels[34] = (0,0,0)
+        pixels[35] = (0,0,0)
+        time.sleep(.2)
     while True:
         if GPIO.input(LED_PIN) == GPIO.LOW:
             if led_button == False:
